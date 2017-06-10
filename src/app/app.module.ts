@@ -36,7 +36,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 import { DataService } from '../app/data.service';
-
+import { Observable } from 'rxjs/Observable';
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function HttpLoaderFactory(http: Http) {
@@ -87,7 +87,8 @@ export function provideSettings(storage: Storage) {
       }
     }),
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    Observable
   ],
   bootstrap: [IonicApp],
   entryComponents: [

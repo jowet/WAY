@@ -12,7 +12,7 @@ import { DataService } from '../../app/data.service';
 })
 export class ListMasterPage {
   currentItems: Item[];
-  memories: any[];
+  stories: any[];
 
   constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController, private dataService:DataService) {
     this.currentItems = this.items.query();
@@ -24,9 +24,9 @@ export class ListMasterPage {
    //
   ionViewDidLoad() {
     //TODO Implement with UserID
-    this.dataService.getAllMemories(1).subscribe(
+    this.dataService.getAllStories(1).subscribe(
       //data Conversion takes place here
-      (data) => this.memories = data,
+      (data) => this.stories = data,
       error => alert(error),
       () => console.log("Finished")
     );
