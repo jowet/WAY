@@ -26,15 +26,16 @@ import { TranslateService } from '@ngx-translate/core'
   template: `<ion-menu [content]="content">
     <ion-header>
       <ion-toolbar>
-        <ion-title>Pages</ion-title>
+        <ion-title>YOUR WAY</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
       <ion-list>
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          {{p.title}}
-        </button>
+        <button menuClose ion-item><ion-icon name="contact"></ion-icon>&nbsp;&nbsp;&nbsp;My Profile</button>
+        <button menuClose ion-item><ion-icon name="heart"></ion-icon>&nbsp;&nbsp;&nbsp;Connect your WAY</button>
+        <button menuClose ion-item><ion-icon name="settings"></ion-icon>&nbsp;&nbsp;&nbsp;Settings</button>
+        <button menuClose ion-item><ion-icon name="information-circle"></ion-icon>&nbsp;&nbsp;&nbsp;About WAY</button>
       </ion-list>
     </ion-content>
 
