@@ -50,10 +50,14 @@ export class ListMasterPage {
   /**
    * Delete an item from the list of items.
    */
-  deleteItem(item) {
-    this.items.delete(item);
-  }
-
+deleteStoryById(id:number){
+   this.dataService.deleteStoryById(id)
+      .subscribe(
+         data => { },
+         error => { },
+         () => { }
+      );
+}
   /**
    * Navigate to the detail page for this item.
    */
