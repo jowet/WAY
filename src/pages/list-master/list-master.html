@@ -1,19 +1,15 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
-
+    <ion-title>WAY: Your Lovestory</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="addItem()">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content>
-
   <ion-list>
     <ion-item-sliding *ngFor="let story of stories">
       <!-- TODO implement functions for Memories -->
@@ -26,10 +22,9 @@
         <p>{{story.lastname}}</p>
         <!-- <ion-note item-end *ngIf="item.note">{{memory.birthdate}}</ion-note> -->
       </button>
-
       <ion-item-options>
         <!--TODO implement Delete Function for Memories  -->
-        <button ion-button color="danger" (click)="deleteItem(item)">
+        <button ion-button color="danger" (click)="deleteStoryById(story.id)">
           {{ 'DELETE_BUTTON' | translate }}
         </button>
       </ion-item-options>
