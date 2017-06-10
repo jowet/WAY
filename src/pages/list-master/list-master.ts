@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
-
 import { ItemCreatePage } from '../item-create/item-create';
 import { ItemDetailPage } from '../item-detail/item-detail';
-
 import { Items } from '../../providers/providers';
-
 import { Item } from '../../models/item';
+import { DataService } from '../../app/data.service';
 
 @Component({
   selector: 'page-list-master',
@@ -14,16 +12,26 @@ import { Item } from '../../models/item';
 })
 export class ListMasterPage {
   currentItems: Item[];
+  memories: any[];
 
-  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController, private dataService:DataService) {
     this.currentItems = this.items.query();
   }
 
   /**
    * The view loaded, let's query our items for the list
    */
+   //
   ionViewDidLoad() {
+    //TODO Implement with UserID
+    this.dataService.getAllMemories(1).subscribe(
+      //data Conversion takes place here
+      (data) => this.memories = data,
+      error => alert(error),
+      () => console.log("Finished")
+    );
   }
+
 
   /**
    * Prompt the user to add a new item. This shows our ItemCreatePage in a
