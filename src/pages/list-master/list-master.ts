@@ -47,6 +47,28 @@ export class ListMasterPage {
     addModal.present();
   }
 
+
+postStory(userID: String, data: any){
+  //Create JSON Data which will be send
+var postData : any = {};
+
+postData =  {
+  "col1":{"Atributte1": "value1", "Atributte2": "value2", "Atributte3": "value3"},
+  "col2":{"Atributte1": "value4", "Atributte2": "value5", "Atributte3": "value6"},
+  "col3":{"Atributte1": "value7", "Atributte2": "value8", "Atributte3": "value9"}
+  };
+
+
+  this.dataService.postStory("File","sdf","sd",postData)
+     .subscribe(
+        data => { },
+        error => { },
+        () => { }
+     );
+}
+
+
+
   /**
    * Delete an item from the list of items.
    */

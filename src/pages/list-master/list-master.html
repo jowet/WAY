@@ -15,15 +15,15 @@
 <ion-content>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let memory of memories">
+    <ion-item-sliding *ngFor="let story of stories">
       <!-- TODO implement functions for Memories -->
       <button ion-item (click)="openItem(item)">
         <ion-avatar item-start>
           <!--TODO Implement the Picture Here  -->
           <!-- <img [src]="item.profilePic" /> -->
         </ion-avatar>
-        <h2>{{memory.firstname}}</h2>
-        <p>{{memory.lastname}}</p>
+        <h2>{{story.firstname}}</h2>
+        <p>{{story.lastname}}</p>
         <!-- <ion-note item-end *ngIf="item.note">{{memory.birthdate}}</ion-note> -->
       </button>
 
