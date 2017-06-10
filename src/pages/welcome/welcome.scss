@@ -2,11 +2,12 @@ page-welcome {
   .splash-bg {
     position: relative;
     background: url('../assets/img/logo_way.png') no-repeat transparent;
-    background-size: cover;
+    background-size: 60%;
     height: 55%;
     z-index: 1;
-    background-repeat: repeat-x;
-    margin: 20px 5px 20px 5px;
+    background-repeat: no-repeat;
+    margin: 0px 5px 5px 5px;
+     background-position: center; 
     
   }
 
@@ -48,12 +49,25 @@ page-welcome {
 
     .imagContainer img{
 
-      float:left;
-      width:50px;
+      float:rigth;
+      width:100px;
+      flex-direction:row;
+    }
+    .grid{
+
+      flex-direction:row;
+      justify-content: center;
+      margin-left:6%;
+    }
+    .grid img{
+      text-align:center;
+
     }
 
     &.activated {
       background-color: rgb(220, 220, 220);
     }
+
+
   
 }
