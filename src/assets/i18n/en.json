@@ -8,9 +8,9 @@
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
 
-  "TAB1_TITLE": "Items",
-  "TAB2_TITLE": "Search",
-  "TAB3_TITLE": "Settings",
+  "TAB1_TITLE": "Gallery",
+  "TAB2_TITLE": "Camera",
+  "TAB3_TITLE": "Love Note",
 
   "MAP_TITLE": "Map",
 
@@ -49,7 +49,7 @@
   "SIGNUP_ERROR": "Unable to create account. Please check your account information and try again.",
   "SIGNUP_BUTTON": "Sign up",
 
-  "LIST_MASTER_TITLE": "Items",
+  "LIST_MASTER_TITLE": "WAY - Your Love Story",
 
   "ITEM_CREATE_TITLE": "New Item",
   "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
