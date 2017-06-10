@@ -4,6 +4,8 @@ import { NavController, ViewController } from 'ionic-angular';
 
 import { Camera } from '@ionic-native/camera';
 
+//final Page with combined Timelines
+import { SettingsPage } from '../settings/settings';
 
 @Component({
   selector: 'page-item-create',
@@ -78,7 +80,6 @@ export class ItemCreatePage {
    * back to the presenter.
    */
   done() {
-    if (!this.form.valid) { return; }
-    this.viewCtrl.dismiss(this.form.value);
+    this.navCtrl.push(SettingsPage);
   }
 }
