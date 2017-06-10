@@ -1,38 +1,33 @@
 <ion-header>
-
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
-
     <ion-buttons end>
       <button ion-button icon-only (click)="addItem()">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content>
-
   <ion-list>
-    <ion-item-sliding *ngFor="let memory of memories">
+    <ion-item-sliding *ngFor="let story of stories">
       <!-- TODO implement functions for Memories -->
       <button ion-item (click)="openItem(item)">
         <ion-avatar item-start>
           <!--TODO Implement the Picture Here  -->
           <!-- <img [src]="item.profilePic" /> -->
         </ion-avatar>
-        <h2>{{memory.firstname}}</h2>
-        <p>{{memory.lastname}}</p>
+        <h2>{{story.firstname}}</h2>
+        <p>{{story.lastname}}</p>
         <!-- <ion-note item-end *ngIf="item.note">{{memory.birthdate}}</ion-note> -->
       </button>
-
       <ion-item-options>
         <!--TODO implement Delete Function for Memories  -->
-        <button ion-button color="danger" (click)="deleteItem(item)">
+        <button ion-button color="danger" (click)="deleteStoryById(story.id)">
           {{ 'DELETE_BUTTON' | translate }}
         </button>
       </ion-item-options>
