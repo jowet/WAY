@@ -32,7 +32,6 @@ export class ListMasterPage {
     );
   }
 
-
   /**
    * Prompt the user to add a new item. This shows our ItemCreatePage in a
    * modal and then adds the new item to our data source if the user created one.
@@ -48,26 +47,29 @@ export class ListMasterPage {
   }
 
 
-postStory(userID: String, data: any){
-  //Create JSON Data which will be send
-var postData : any = {};
+postStory(userID: number, photo: any, note: String, location: String ){
+    //Create JSON Data which will be send
+    var upload_id : number;
+    upload_id = this.dataService.postPhoto(photo);
 
-postData =  {
-  "col1":{"Atributte1": "value1", "Atributte2": "value2", "Atributte3": "value3"},
-  "col2":{"Atributte1": "value4", "Atributte2": "value5", "Atributte3": "value6"},
-  "col3":{"Atributte1": "value7", "Atributte2": "value8", "Atributte3": "value9"}
-  };
-
-
-  this.dataService.postStory("File","sdf","sd",postData)
-     .subscribe(
-        data => { },
-        error => { },
-        () => { }
-     );
+    //Create JSON from Data
+    var postData : any = {};
+    postData =
+              {"user_id": userID,
+              "upload_id": upload_id,
+              "note": note,
+              "location": location };
+      this.dataService.postStoryToDatabase("File","sdf","sd",postData)
+         .subscribe(
+            data => { },
+            error => { },
+            () => { }
+         );
 }
 
-
+postPhoto(photo: any){
+  this.dataService.postPhoto(photo);
+}
 
   /**
    * Delete an item from the list of items.

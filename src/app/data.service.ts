@@ -3,6 +3,7 @@ import {Http} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import {RequestOptions, Request, RequestMethod} from '@angular/http';
 
+
 import 'rxjs/Rx';
 
 @Injectable()
@@ -32,17 +33,19 @@ deleteStoryById(ID:number): Observable <any> {
           .map((res) => res.json());
 }
 
-//POST Story
-postStory(File,comment,userID,data:JSON):Observable<any> {
-  let post =
-  {
-    "birthdate": "1994-07-28T00:00:00+02:00",
-    "city": "Augsburg",
-    "email": "ult.laan@mgmail.da"
-  }
+//POST photo an retrieve ID
+postPhoto(photo: any) : number {
+  //TODO upload Photo an Post to Database, retrieve ID in exchange
+  var id : number;
+  id = 1;
+  return id;
+}
 
 
+//POST Story to DataBase
+postStoryToDatabase(File,comment,userID,data:JSON):Observable<any> {
   return this.http.post("http://localhost:8080/backend/",data)
     .map((res) => res.json());
 }
+
 }
