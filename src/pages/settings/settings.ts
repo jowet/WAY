@@ -16,6 +16,13 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: 'settings.html'
 })
 export class SettingsPage {
+
+
+memories: any = {};
+
+
+
+
   // Our local settings object
   options: any;
 
@@ -68,6 +75,30 @@ export class SettingsPage {
   ionViewDidLoad() {
     // Build an empty form for the template to render
     this.form = this.formBuilder.group({});
+
+    this.memories = [
+        { pictureURL: "assets/img/him/m8.jpg",
+          comment: "This is the hackathon where I had the idea for WAY!!"
+        },
+        { pictureURL: "assets/img/him/m7.jpg",
+          comment: "I invited my family over for dinner .. finally you get to meet them ^^"
+        },
+        { pictureURL: "assets/img/him/m6.jpg",
+          comment: "Magical moment, that made me think of you - all these swans just chilling"
+        },
+        { pictureURL: "assets/img/couple/couple1.jpg",
+          comment: "Indian Food in Cologne :)"
+        },
+        { pictureURL: "assets/img/couple/couple2.jpg",
+          comment: "Indian Food in Cologne :)"
+        },
+        { pictureURL: "assets/img/couple/couple3.jpg",
+          comment: "Indian Food in Cologne :)"
+        },
+
+
+    ]
+
   }
 
   ionViewWillEnter() {
