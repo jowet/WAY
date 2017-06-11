@@ -24,12 +24,12 @@ export class ListMasterPage {
    //
   ionViewDidLoad() {
     //TODO Implement with UserID
-    this.dataService.getAllStories(1).subscribe(
-      //data Conversion takes place here
-      (data) => this.stories = data,
-      error => alert(error),
-      () => console.log("Finished")
-    );
+    // this.dataService.getAllStories(1).subscribe(
+    //   //data Conversion takes place here
+    //   (data) => this.stories = data,
+    //   error => alert(error),
+    //   () => console.log("Finished")
+    // );
   }
 
   /**
