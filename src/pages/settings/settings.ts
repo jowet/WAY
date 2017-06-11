@@ -90,10 +90,10 @@ memories: any = {};
           comment: "Indian Food in Cologne :)"
         },
         { pictureURL: "assets/img/couple/couple2.jpg",
-          comment: "Indian Food in Cologne :)"
+          comment: "London calling!"
         },
         { pictureURL: "assets/img/couple/couple3.jpg",
-          comment: "Indian Food in Cologne :)"
+          comment: "All the way up with you"
         },
 
 
