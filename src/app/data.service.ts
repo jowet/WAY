@@ -14,7 +14,7 @@ constructor(private http: Http) { }
 
 //@GET ALL DATA
 getAllStories(userId:number){
-  return this.http.get('http://localhost:8080/messenger/webapi/pupils').map(
+  return this.http.get('http://172.31.127.17:8000/api/stories/').map(
     (res) => res.json()
   );
 }
@@ -22,7 +22,7 @@ getAllStories(userId:number){
 //@GET Memory by ID
 getStoryById(storyid: number){
   //Call RESTful API with ID
-  return this.http.get('http://localhost:8080/messenger/webapi/pupils').map(
+  return this.http.get('http://172.31.127.17:8000/api/stories/').map(
     (res) => res.json()
   );
 }
@@ -34,11 +34,15 @@ deleteStoryById(ID:number): Observable <any> {
 }
 
 //POST photo an retrieve ID
-postPhoto(photo: any) : number {
+postPhoto(photo: any){
   //TODO upload Photo an Post to Database, retrieve ID in exchange
-  var id : number;
-  id = 1;
-  return id;
+  var data = {
+    name : 'test',
+    image:photo
+  }
+  return this.http.post("http://172.31.127.17:8000/api/uploads/" , data)
+          .map((res) => res.json());
+
 }
 
 

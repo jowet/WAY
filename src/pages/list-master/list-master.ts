@@ -43,8 +43,8 @@ export class ListMasterPage {
 
 postStory(userID: number, photo: any, note: String, location: String ){
     //Create JSON Data which will be send
-    var upload_id : number;
-    upload_id = this.dataService.postPhoto(photo);
+    // var upload_id : number;
+    var upload_id = this.dataService.postPhoto(photo);
 
     //Create JSON from Data
     var postData : any = {};

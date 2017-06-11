@@ -7,38 +7,45 @@ import { Item } from '../../models/item';
 
 import { Items } from '../../providers/providers';
 
+import { Camera } from '@ionic-native/camera';
+
+
 
 @Component({
   selector: 'page-search',
   templateUrl: 'search.html'
 })
+
+
 export class SearchPage {
-  
-  currentItems: any = [];
+  public base64Image: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public items: Items) { }
+    constructor(private navController: NavController, private camera: Camera) {
+        this.base64Image = "https://placehold.it/150x150";
 
-  /**
-   * Perform a service for the proper items.
-   */
-  getItems(ev) {
-    let val = ev.target.value;
-    if (!val || !val.trim()) {
-      this.currentItems = [];
-      return;
     }
-    this.currentItems = this.items.query({
-      name: val
-    });
-  }
 
-  /**
-   * Navigate to the detail page for this item.
-   */
-  openItem(item: Item) {
-    this.navCtrl.push(ItemDetailPage, {
-      item: item
-    });
-  }
+    ionViewDidLoad() {
+      //TODO Implement with UserID
+      this.takePicture();
+    }
+
+    public takePicture() {
+        this.camera.getPicture({
+            quality : 75,
+            destinationType : this.camera.DestinationType.DATA_URL,
+            sourceType : this.camera.PictureSourceType.CAMERA,
+            allowEdit : true,
+            encodingType: this.camera.EncodingType.JPEG,
+            targetWidth: 300,
+            targetHeight: 300,
+            saveToPhotoAlbum: false
+        }).then(imageData => {
+            this.base64Image = "data:image/jpeg;base64," + imageData;
+
+        }, error => {
+            console.log("ERROR -> " + JSON.stringify(error));
+        });
+    }
 
 }

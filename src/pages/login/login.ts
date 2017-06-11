@@ -36,11 +36,11 @@ export class LoginPage {
 
   // Attempt to login in through our User service
   doLogin() {
-    this.user.login(this.account).subscribe((resp) => {
+    // this.user.login(this.account).subscribe((resp) => {
       this.navCtrl.push(MainPage);
-    }, (err) => {
-      this.navCtrl.push(MainPage);
+    // }, (err) => {
+    //   this.navCtrl.push(MainPage);
       // Unable to log in
-    });
+    // });
   }
 }

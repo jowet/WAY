@@ -49,7 +49,7 @@ export class User {
         console.error('ERROR', err);
       });
 
-    return seq;
+    return true;
   }
 
   /**

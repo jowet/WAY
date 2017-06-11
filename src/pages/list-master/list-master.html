@@ -6,7 +6,7 @@
     <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
     <ion-buttons end>
       <button ion-button (click)="addPartner()">
-        <ion-icon name="add">Found partner!</ion-icon>
+        <ion-icon name="contacts"></ion-icon>&nbsp;Connect
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -22,7 +22,7 @@
               <ul class="timeline" *ngFor="let story of stories">
                   <li class="timeline-item">
                       <div class="timeline-info">
-                          <img src = "../bird.jpg"/>
+                          <img src = "http://172.31.127.17:8000/{{story.image}}"/>
                       </div>
                       <div class="timeline-marker"></div>
                       <div class="timeline-content">
